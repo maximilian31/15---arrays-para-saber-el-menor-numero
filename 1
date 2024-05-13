@@ -1,0 +1,46 @@
+/*
+Cargar un vector de 5 elementos enteros. 
+imprimir el menor y un mensaje si se repite dentro del vector.
+*/
+#include "iostream"
+#include <stdio.h>
+using namespace std;
+class Ejercicio {
+    private:
+        int vector[5];
+    public:
+        void carga();
+        void imprimir();
+};
+
+void Ejercicio::carga()
+{
+    for(int i=0; i<5;i++)
+    {
+        cout << "Cargar el numero " << i + 1 << endl;
+        cin >> vector[i];
+    }
+}
+
+void Ejercicio::imprimir()
+{
+    int menor,posicion0;
+    menor = vector[0];
+    posicion0=0;
+    for(int i=1; i<5;i++)
+    {
+        if(vector[i]<vector[0])
+        {
+          menor = vector[i];  
+          posicion0 =  i ;
+        }
+    }
+    cout << "El menor es: " << vector[posicion0] << endl;
+}
+int main()
+{
+   Ejercicio ejer;
+   ejer.carga();
+   ejer.imprimir();
+  
+}
